@@ -8,9 +8,9 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
 public class DrawBoard extends Adapter {
-    Color color =Color.blue;
+    Color color;
     MainFrame frame;
-    ArrayList<Graphic> shape = null;
+    ArrayList<Graphic> shape;
     int x;
     int y;
     int x0;
@@ -31,9 +31,6 @@ public class DrawBoard extends Adapter {
         this.x=0;
         this.y=0;
 
-    }
-    public void setColor(Color color){
-        this.color=color;
     }
 
     @Override
@@ -93,8 +90,6 @@ public class DrawBoard extends Adapter {
     @Override
     public void mouseReleased(MouseEvent e) {
         super.mouseReleased(e);
-
-        Graphics t=getGraphics();
         if (frame.isDraw()||move){
             shape.add(new Graphic(x0,y0,sizeX,sizeY,color));
         }
