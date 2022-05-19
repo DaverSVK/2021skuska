@@ -1,5 +1,7 @@
 package sk.stuba.fei.uim.oop.buttons;
 
+import sk.stuba.fei.uim.oop.frame.MainFrame;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -9,7 +11,9 @@ import java.awt.event.ActionListener;
 public class ShapeButt extends JButton implements ActionListener {
     JLabel text;
     boolean draw = true;
-    public ShapeButt(){
+    MainFrame frame;
+    public ShapeButt(MainFrame frame){
+        this.frame=frame;
         this.setPreferredSize(new Dimension(100,200));
         this.setBackground(new Color(175, 185, 192));
         this.setLayout(new BorderLayout());
@@ -23,10 +27,12 @@ public class ShapeButt extends JButton implements ActionListener {
             if (draw){
                 text.setText("Moving");
                 draw = false;
+                frame.setDraw(false);
             }
             else {
                 text.setText("Drawing");
                 draw = true;
+                frame.setDraw(true);
             }
         }
     }
