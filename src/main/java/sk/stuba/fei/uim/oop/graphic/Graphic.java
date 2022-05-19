@@ -27,9 +27,10 @@ public class Graphic{
         this.color=color;
     }
     public void paint(Graphics g){
-
-        g.fillOval(x, y, sizeX, sizeY);
         g.setColor(color);
+        g.fillOval(x, y, sizeX, (int)((0.666)*(double) sizeY));
+        g.fillRect(x+ sizeX/3, y-5+(int)((0.666)*(double) sizeY), sizeX/3, sizeY/3);
+
     }
 
     public void onMouseMove(int x, int y){

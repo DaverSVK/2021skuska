@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class DrawBoard extends Adapter {
     Color color =Color.blue;
     MainFrame frame;
-    ArrayList<Graphic> shape;
+    ArrayList<Graphic> shape = null;
     int x;
     int y;
     int x0;
@@ -46,7 +46,8 @@ public class DrawBoard extends Adapter {
             }
             if (frame.isDraw()||move){
                 g.setColor(color);
-                g.fillOval(x0, y0, sizeX, sizeY);
+                g.fillOval(x0, y0, sizeX, (int)((0.666)*(double) sizeY));
+                g.fillRect(x0+ sizeX/3, y0-5+(int)((0.666)*(double) sizeY), sizeX/3, sizeY/3);
             }
 
 
@@ -95,7 +96,7 @@ public class DrawBoard extends Adapter {
 
         Graphics t=getGraphics();
         if (frame.isDraw()||move){
-            shape.add(new Graphic(x0,y0,sizeX,sizeY,Color.blue));
+            shape.add(new Graphic(x0,y0,sizeX,sizeY,color));
         }
         move = false;
         repaint();
