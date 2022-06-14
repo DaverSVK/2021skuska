@@ -13,6 +13,7 @@ public class ColorButt extends JButton implements ActionListener {
     MainFrame frame;
     public ColorButt(MainFrame frame){
         this.frame=frame;
+        this.setFocusable(false);
         this.setPreferredSize(new Dimension(100,200));
         this.setBackground(new Color(89, 86, 255));
         this.setLayout(new BorderLayout());

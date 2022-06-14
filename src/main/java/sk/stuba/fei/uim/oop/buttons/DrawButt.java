@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 public class DrawButt extends JButton implements ActionListener {
     MainFrame frame;
     public DrawButt(MainFrame frame){
+        this.setFocusable(false);
         this.frame=frame;
         this.setPreferredSize(new Dimension(100,200));
         this.setBackground(new Color(175, 185, 192));

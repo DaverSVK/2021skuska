@@ -14,6 +14,7 @@ public class ShapeButt extends JButton implements ActionListener {
     MainFrame frame;
     public ShapeButt(MainFrame frame){
         this.frame=frame;
+        this.setFocusable(false);
         this.setPreferredSize(new Dimension(100,200));
         this.setBackground(new Color(175, 185, 192));
         this.setLayout(new BorderLayout());
